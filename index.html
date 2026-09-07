@@ -1,0 +1,160 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  </head>
+
+  <body class="min-h-screen bg-[#c5e5e7] font-mono">
+    <main class="flex min-h-screen flex-col items-center justify-center px-6 py-10" >
+      <header class="mb-10">
+        <h1  class="text-center text-xl font-bold leading-5 tracking-[0.5em] text-[#3f5f60]" >
+          <img src="./images/logo.svg" alt="" /> SPLI<br />TTER
+        </h1>
+      </header>
+
+      <section class="w-full max-w-[920px] rounded-3xl bg-white p-6 shadow-xl sm:p-8">
+        <div class="grid gap-8 md:grid-cols-2 md:gap-10">
+          <div class="flex flex-col">
+            <div class="mb-8">
+              <label for="bill" class="mb-2 block text-sm font-bold text-grey-500">
+                Bill
+              </label>
+
+              <div class="relative">
+                <img src="./images/icon-dollar.svg" alt="" class="pointer-events-none absolute left-4 top-1/2 w-3 -translate-y-1/2"/>
+
+                <input id="bill" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0" aria-label="Bill amount" class="calculator-input" />
+              </div>
+            </div>
+
+            <fieldset class="mb-8">
+              <legend class="mb-3 text-sm font-bold text-grey-500">
+                Select Tip %
+              </legend>
+
+              <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                <button type="button" data-tip="5" class="tip-button">
+                  5%
+                </button>
+
+                <button type="button" data-tip="10" class="tip-button">
+                  10%
+                </button>
+
+                <button type="button" data-tip="15" class="tip-button">
+                  15%
+                </button>
+
+                <button type="button" data-tip="25" class="tip-button">
+                  25%
+                </button>
+
+                <button type="button" data-tip="50" class="tip-button">
+                  50%
+                </button>
+
+                <input id="custom-tip" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Custom" aria-label="Custom tip percentage" class="custom-input hidden" />
+
+                <button id="custom-button" type="button" class="min-h-12 rounded-md bg-grey-50 px-2 py-2 text-lg font-bold text-grey-500 transition hover:bg-[#d6eeee] focus:outline-2 focus:outline-offset-2 focus:outline-primary" >
+                  Custom
+                </button>
+              </div>
+            </fieldset>
+
+            <div>
+              <div class="mb-2 flex items-center justify-between">
+                <label for="people" class="text-sm font-bold text-grey-500">
+                  Number of People
+                </label>
+
+                <span
+                  id="error-message"
+                  class="hidden text-xs font-bold text-red-500"
+                >
+                  Can't be zero
+                </span>
+              </div>
+              <div class="relative">
+                <img
+                  src="./images/icon-person.svg"
+                  alt=""
+                  class="pointer-events-none absolute left-4 top-1/2 w-3 -translate-y-1/2"
+                />
+
+                <input
+                  id="people"
+                  type="number"
+                  min="0"
+                  step="1"
+                  inputmode="numeric"
+                  placeholder="0"
+                  aria-label="Number of people"
+                  class="calculator-input"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex min-h-[320px] flex-col rounded-2xl bg-dark-green p-6 sm:p-8"
+          >
+            <div class="flex items-start justify-between">
+              <div>
+                <h2 class="text-sm font-bold text-white">Tip Amount</h2>
+
+                <p class="text-xs font-bold text-grey-400">/ person</p>
+              </div>
+
+              <span
+                id="tip-amount"
+                class="text-3xl font-bold text-primary sm:text-4xl"
+              >
+                $0.00
+              </span>
+            </div>
+
+            <div class="mt-8 flex items-start justify-between">
+              <div>
+                <h2 class="text-sm font-bold text-white">Total</h2>
+
+                <p class="text-xs font-bold text-grey-400">/ person</p>
+              </div>
+
+              <span
+                id="total-amount"
+                class="text-3xl font-bold text-primary sm:text-4xl"
+              >
+                $0.00
+              </span>
+            </div>
+
+            <button
+              id="reset"
+              type="button"
+              disabled
+              class="mt-auto w-full rounded-md bg-primary py-3 text-sm font-bold uppercase text-dark-green transition hover:bg-[#8ee9df] focus:outline-2 focus:outline-offset-2 focus:outline-white disabled:cursor-not-allowed disabled:opacity-30"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="mt-6 text-center text-xs text-grey-500">
+        
+      </footer>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

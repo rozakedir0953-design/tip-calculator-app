@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: hsl(172 67% 45%);
+  --color-dark-green: hsl(183 100% 15%);
+  --color-grey-500: hsl(186 14% 43%);
+  --color-grey-400: hsl(184 14% 56%);
+  --color-grey-200: hsl(185 41% 84%);
+  --color-grey-50: hsl(189 47% 97%);
+
+  --font-mono: "Space Mono", monospace;
+}
+
+.tip-button {
+  @apply min-h-12 rounded-md bg-dark-green px-2 py-2 text-lg font-bold text-white transition;
+}
+
+.tip-button:hover {
+  @apply bg-primary text-dark-green;
+}
+
+.tip-button:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+.tip-button.active {
+  @apply bg-primary text-dark-green;
+}
+
+.calculator-input {
+  @apply w-full rounded-md border-2 border-transparent bg-grey-50 py-2 pl-10 pr-4 text-right text-2xl font-bold text-dark-green outline-none transition;
+}
+
+.calculator-input:focus {
+  @apply border-primary;
+}
+
+.calculator-input.error {
+  border-color: #e06c4d;
+}
+
+.custom-input {
+  @apply min-h-12 w-full rounded-md border-2 border-transparent bg-grey-50 px-2 py-2 text-center text-lg font-bold text-dark-green outline-none;
+}
+
+.custom-input:focus {
+  @apply border-primary;
+}
